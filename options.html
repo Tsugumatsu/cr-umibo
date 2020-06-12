@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="options.js"></script>
+<style>
+body {
+	background: #202023;
+	color: #f9f9f9;
+	font-size:15px;
+	font-weight:100;
+	margin-top: 5px;
+	font-family: Tahoma, Helvetica, sans-serif;
+}
+
+label:hover {
+	background: #404040;
+}
+
+label {
+	line-height: 35px;
+	margin: 7px;
+	padding: 7px;
+}
+
+h1 {
+	padding: 10px;
+	margin-top: 10px;
+	margin-bottom: 3px;
+	font-size: 16px;
+	font-weight: 600;
+}
+@media (prefers-color-scheme: light) {
+	body {
+		background: #ffffff;
+		color: #333333;
+	}
+	label:hover {
+		background: #eaeaea;
+	}
+}
+</style>
+<form>
+	<label>
+		<input name="separate_categories" type="checkbox">
+		Separate each categories in its own folder.
+	</label>
+
+	<h1>Categories</h1>
+	<label>
+		<input name="categories_toolbar" type="checkbox">
+		Bookmarks Toolbar
+	</label>
+	<label>
+		<input name="categories_menu" type="checkbox">
+		Bookmarks Menu
+	</label>
+	<br>
+	<label>
+		<input name="categories_other" type="checkbox">
+		Other Bookmarks
+	</label>
+	<label>
+		<input name="categories_mobile" type="checkbox">
+		Mobile Bookmarks
+	</label>
+	<h1>Background</h1>
+	<label>
+		<input name="bg" id="follow_theme" value="follow_theme" type="radio">Same as the current theme
+	</label>
+	<label>
+		<input name="bg" id="fetch_unsplash" value="fetch_unsplash" type="radio">Fetch from Unsplash (Experimental)
+	</label>
+</form>
+</html>

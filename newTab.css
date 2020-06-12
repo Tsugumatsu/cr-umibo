@@ -1,0 +1,219 @@
+:root {
+	--bg: #323234;
+	--color: #f9f9fa;
+	--tab-line: #0a84ff;
+	--faded-line: #0a84ff33;
+	--field: #474749;
+	--border: #595959;
+	--faded-text: #8f8f8f;
+}
+@media (prefers-color-scheme: light) {
+	:root {
+		--bg: #f7f7f7;
+		--color: #585858;
+		--tab-line: #0a84ff;
+		--faded-line: #00000033;
+		--field: #fff;
+		--border: #d6d6d6;
+		--faded-text: #626262;
+	}
+}
+
+html{
+	background: var(--bg);
+	height: 100%;
+}
+body{
+	margin: 15px;
+	overflow: hidden;
+	font: -webkit-control;
+	user-select: none;
+	color: var(--color);
+}
+a {
+	color: var(--color);
+}
+
+#tip_container {
+	display:none;
+}
+#search_tip {
+	text-align: left;
+	font-size:22px;
+	width: max-content;
+	margin: 15px auto;
+	color: var(--faded-text);
+}
+#search_tip > span {
+	display: inline-block;
+	text-align: center;
+	background: var(--field);
+	padding: 1px;
+	margin: 3px 6px;
+	width: 30px;
+	border-radius: 3px;
+}
+
+.window {
+	background: var(--bg);
+	position:absolute;
+	border-radius: 8px;
+	border: 1px solid var(--border);
+	box-shadow: 0 5px 10px #0001;
+}
+.window .border{
+	text-align:center;
+	line-height:32px;
+	border-bottom: 1px solid var(--border);
+}
+
+.window .resize {
+	height: 20px;
+	cursor: nwse-resize;
+	border-top: 1px solid var(--border);
+}
+.window .dropzone {
+	display: none;
+	background: var(--faded-line);
+	outline: 1px solid var(--tab-line);
+	position:absolute;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+}
+.window .border span {
+	width: 20px;
+	height: 20px;
+	float: right;
+	margin: 5px 8px 0 -32px;
+	-moz-context-properties: fill, fill-opacity;
+	background: url(close.svg);
+	fill: var(--color);
+	fill-opacity: 0;
+}
+.window .border span:hover {
+	cursor: initial;
+	fill-opacity: 0.1;
+}
+
+.window main {
+	overflow: auto;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(100px, max-content));
+	grid-template-rows: repeat(auto-fill, 80px);
+	grid-gap: 10px;
+}
+.window main article {
+	margin: 8px 12px;
+	padding: 10px;
+	background: var(--field);
+	border-radius: 4px;
+	border: 1px solid var(--border);
+	transition-duration: 0.5s;
+}
+.window main a {
+	height: 78px;
+	text-decoration: none;
+	word-break: break-word;
+	text-align: center;
+	overflow: hidden;
+}
+.window main a img {
+	display: block;
+	margin: auto;
+}
+.window main article img {
+	margin-right: 4px;
+	vertical-align: middle;
+}
+
+.window main a:hover {
+	background: var(--faded-line);
+}
+.window main article:hover {
+	box-shadow: 0 0 0 5px var(--border);
+	transition-duration: 0s;
+}
+.desktopFolder {
+	background: var(--field);
+	display: inline-block;
+	min-width: 35px;
+	padding: 10px;
+	margin: 15px;
+	border-radius: 4px;
+	border: 1px solid var(--border);
+	line-height: 15px;
+	transition-duration: 0.5s;
+}
+a.desktopFolder {
+	text-decoration: none;
+	background: none;
+	border:none;
+	border-radius: 0;
+	padding: 15px;
+	margin: 0;
+	text-align: center;
+}
+.desktopFolder img {
+	margin-right: 4px;
+	vertical-align: middle;
+}
+div.desktopFolder:hover {
+	box-shadow: 0 0 0 5px var(--border);
+	transition-duration: 0s;
+}
+a.desktopFolder:hover {
+	outline: 1px solid var(--tab-line);
+	background: var(--faded-line);
+	transition-duration: 0s;
+}
+hr {
+	border: none;
+	border-top: 1px dotted var(--border);
+}
+#secureDrag {
+	z-index:10;
+	position:absolute;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+}
+#options {
+	position: fixed;
+	top: 15px;
+	right: 15px;
+	padding: 15px;
+	background: url(settings.svg) no-repeat center;
+	-moz-context-properties: fill;
+	fill: var(--faded-text);
+}
+#options:hover {
+	background-color: var(--border);
+}
+#rename_vortex {
+	position:fixed;
+	right: 0;
+	top: 40%;
+	text-align: center;
+	padding: 10px;
+	height: 200px;
+	width: 200px;
+	border: 1px solid var(--border);
+	border-right: none;
+	display: none;
+}
+#delete_vortex {
+	position:fixed;
+	left: 0;
+	bottom: 0;
+	text-align: center;
+	padding: 10px;
+	height: 200px;
+	width: 200px;
+	border-top: 1px solid var(--border);
+	border-right: 1px solid var(--border);
+	display: none;
+	background: var(--bg);
+}
